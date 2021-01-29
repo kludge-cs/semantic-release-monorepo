@@ -31,9 +31,7 @@
 	],
 	"scripts": {
 		"prepare": "npm build",
-		"lint": "npm run lint:source && npm run lint:rewrite",
-		"lint:source": "eslint src --ext js,json --fix",
-		"lint:rewrite": "eslint src-rewrite --ext ts --fix",
+		"lint": "eslint src-rewrite --ext ts --fix",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"build": "tsc -b src",
@@ -59,6 +57,7 @@
 		"@commitlint/config-conventional": "^11.0.0",
 		"@kludge-cs/eslint-config-js": "^1.0.1",
 		"@kludge-cs/eslint-config-ts": "^1.0.1",
+		"@kludge-cs/ts-build-config": "^1.0.0",
 		"@types/jest": "^26.0.20",
 		"@types/node": "^14.14.21",
 		"@types/semantic-release": "^17.2.0",
@@ -88,6 +87,6 @@
 		}
 	},
 	"lint-staged": {
-		"*\\.(js|json|ts)": "eslint --ext js,json,ts --fix"
+		"*\\.(js|ts)": "eslint --ext js,ts --fix"
 	}
 }
